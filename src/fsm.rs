@@ -177,7 +177,7 @@ impl<'d> NbtFsm<'d> {
                 NameState::NameComplete => (),
                 NameState::NoNameLen => {
                     let len = forward_needs!(wrap(Ok), self.capture_short());
-                    let len = len.cast_unsigned() as usize;
+                    let len = len as usize;
                     self.namestate = NameState::Name(len);
                     continue;
                 }
@@ -315,7 +315,7 @@ impl<'d> NbtFsm<'d> {
                     }
                     TagState::StringNoLength => {
                         let len = forward_needs!(wrap(Ok), self.capture_short());
-                        let len = len.cast_unsigned() as usize;
+                        let len = len as usize;
                         self.state = TagState::String(len);
                         continue;
                     }
