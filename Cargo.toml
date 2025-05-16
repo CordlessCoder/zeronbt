@@ -3,6 +3,7 @@ name = "zeronbt"
 version = "0.1.1"
 edition = "2024"
 description = "A no-std, minimal allocation, streaming NBT parser"
+license = "MIT"
 
 [[bench]]
 name = "zeronbt"
