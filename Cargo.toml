@@ -4,5 +4,16 @@ version = "0.1.0"
 edition = "2024"
 description = "A no-std, minimal allocation, streaming NBT parser"
 
+[[bench]]
+name = "zeronbt"
+harness = false
+
+[profile.bench]
+strip = false
+debug = true
+
 [dependencies]
 thiserror = "2.0.12"
+
+[dev-dependencies]
+iai-callgrind = "0.14.0"
